@@ -1,0 +1,25 @@
+<template>
+  <div
+    style="display:flex;flex-direction:column;justify-content: flex-start;align-items: flex-start;height:380px;overflow:hidden;"
+  >
+    <el-button type="text" @click="goMore" style="width：20px;float:right;padding:20px">More</el-button>
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    url: {
+      type: String,
+      default: "./"
+    }
+  },
+  methods: {
+    goMore() {
+      this.$router.push(this.url);
+    }
+  }
+};
+</script>
+
