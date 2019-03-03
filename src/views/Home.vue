@@ -5,21 +5,21 @@
     <el-row :gutter="20">
       <el-col :span="12">
         <div class="grid-content bg-purple">
-          <More>
+          <More url="./news">
             <News/>
           </More>
         </div>
       </el-col>
       <el-col :span="12">
-        <div class="grid-content bg-purple">
-          <More>
-            <Marked :input="content_1"/>
+        <div class>
+          <More url="./call_for_papers">
+            <Marked :input="callForPapers"/>
           </More>
         </div>
       </el-col>
     </el-row>
     <el-row>
-      <Marked :input="content_2"/>
+      <Marked :input="home"/>
     </el-row>
   </div>
 </template>
@@ -39,20 +39,20 @@ export default {
   },
   data: function() {
     return {
-      content_1: "",
-      content_2: ""
+      home: "",
+      callForPapers: ""
     };
   },
   methods: {
     getContent: async function() {
-      let res1 = await this.$request("post", `/util/detail`, {
-        hash: "home1"
+      let res = await this.$request("post", `/util/detail`, {
+        hash: "home"
       });
-      this.content_1 = res1.code == 1 ? res1.data : "# Hello ASIM2019";
-      let res2 = await this.$request("post", `/util/detail`, {
-        hash: "home2"
+      this.home = res.code == 1 ? res.data : "# Hello ASIM2019";
+      res = await this.$request("post", `/util/detail`, {
+        hash: "call_for_papers"
       });
-      this.content_2 = res2.code == 1 ? res2.data : "# Hello ASIM2019";
+      this.callForPapers = res.code == 1 ? res.data : "# Hello ASIM2019";
     }
   },
   created: async function() {

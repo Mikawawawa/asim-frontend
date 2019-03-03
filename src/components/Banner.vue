@@ -1,18 +1,7 @@
 <template>
   <el-row type="flex" class="banner" justify="center" style="width:100%;">
-    <el-row :span="4"></el-row>
-    <el-col :span="4" class="item">
-      <div class="grid-content">
-        <h1 style="font-size:4rem;margin:0px">ASIM2019</h1>
-      </div>
-    </el-col>
-    <el-col :span="6" class="item">
-      <div class="grid-content">
-        <el-row
-          style="line-height:50px;margin:0px"
-        >The 7th Aisa International Symposium on Mechatronics</el-row>
-        <el-row style="line-height:50px;margin:0px">September 19~22,2019. Hangzhou,China</el-row>
-      </div>
+    <el-col :span="20" class="item">
+      <img src="@/assets/banner.jpg" style="height:100%">
     </el-col>
     <el-col :span="2">
       <el-button type="text" class="light-button" @click="()=>{this.$router.push('./upload')}">
@@ -20,7 +9,7 @@
         <el-badge class="mark" value="click"/>
       </el-button>
     </el-col>
-    <el-row :span="6"></el-row>
+    <el-row :span="2"></el-row>
   </el-row>
 </template>
 
@@ -32,6 +21,7 @@ export default {};
 .light-button,
 .light-button:hover {
   color: aliceblue !important;
+  font-size: 1.5vmax;
 }
 
 .light-button:hover {

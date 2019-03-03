@@ -54,10 +54,7 @@ export default {
         name: ""
       },
       dialogFormVisible: false,
-      formLabelWidth: "auto",
-      home: "",
-      callForPapers: "",
-      guanggao: ""
+      formLabelWidth: "auto"
     };
   },
   methods: {
@@ -67,20 +64,6 @@ export default {
         this.dialogFormVisible = false;
       }
     }
-  },
-  created: async function() {
-    let res = await this.$request("post", `/util/detail`, {
-      hash: "home"
-    });
-    this.home = res.code == 1 ? res.data : "# Hello ASIM2019";
-    res = await this.$request("post", `/util/detail`, {
-      hash: "ad"
-    });
-    this.guanggao = res.code == 1 ? res.data : "# Hello ASIM2019";
-    res = await this.$request("post", `/util/detail`, {
-      hash: "call_for_papers"
-    });
-    this.callForPapers = res.code == 1 ? res.data : "# Hello ASIM2019";
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div v-html="compiledMarkdown" class="v-show" style="padding:20px"></div>
+  <div v-html="compiledMarkdown" class="v-show" style="padding:20px;text-align:left"></div>
 </template>
 <script>
 import marked from "marked";

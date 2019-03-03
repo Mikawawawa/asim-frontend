@@ -66,7 +66,7 @@
         <span slot="title">Connect Us</span>
       </el-menu-item>
     </el-menu>
-    <Marked style="width:160px;" class="guanggao"/>
+    <Marked style="width:160px;" class="guanggao" :input="content"/>
   </el-aside>
 </template>
 
@@ -75,8 +75,8 @@
   width: 160px;
 }
 
-.guanggao > img {
-  width: 100%;
+.guanggao img {
+  width: 150px;
 }
 </style>
 
@@ -88,7 +88,9 @@ export default {
     Marked
   },
   data: function() {
-    return {};
+    return {
+      content: ""
+    };
   },
   methods: {},
   created: async function() {
