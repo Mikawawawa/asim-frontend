@@ -1,15 +1,25 @@
 <template>
-  <el-row type="flex" class="banner" justify="center" style="width:100%;">
-    <el-col :span="20" class="item">
-      <img src="@/assets/banner.jpg" style="height:100%">
+  <el-row type="flex" style="width:100%" justify="center">
+    <el-col :span="2">
+      <div style="height:100%"></div>
+    </el-col>
+    <el-col
+      :span="20"
+      type="flex"
+      class="banner"
+      justify="center"
+      style="width:100%;max-width:1280px"
+    >
+      <img src="@/assets/banner.jpg" style="width:100%">
     </el-col>
     <el-col :span="2">
-      <el-button type="text" class="light-button" @click="()=>{this.$router.push('./upload')}">
-        <span style="padding:2px">Register</span>
-        <el-badge class="mark" value="click"/>
-      </el-button>
+      <span style="float:left">
+        <el-button type="text" class="light-button" @click="()=>{this.$router.push('./upload')}">
+          <span style="padding:2px">Register</span>
+          <el-badge class="mark" value="click"/>
+        </el-button>
+      </span>
     </el-col>
-    <el-row :span="2"></el-row>
   </el-row>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <el-container style="min-height:100vh">
-      <el-header style="justify-content: center;height:100px;background:#509176">
+    <el-container style="min-height:100vh;width:100%">
+      <el-header style="justify-content: center;height:auto;background:#509176">
         <Banner/>
       </el-header>
 
@@ -131,9 +131,10 @@ export default {
 .el-header {
   /* background-color: #b3c0d1;
   color: #333; */
+  padding: 0px !important;
   display: flex;
   /* line-height: 100px; */
-  line-height: 100px;
+  /* line-height: 100px; */
   justify-content: space-between;
   width: 100vw;
 }
