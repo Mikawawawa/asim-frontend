@@ -5,6 +5,7 @@
         <el-select v-model="formInline.type" placeholder="选择类型">
           <el-option label="文章" value="news"></el-option>
           <el-option label="Call For Papers" value="call_for_papers"></el-option>
+          <el-option label="Paper Submission" value="paper_submission"></el-option>
           <el-option label="Committee" value="committee"></el-option>
           <el-option label="Program" value="program"></el-option>
           <el-option label="Keynotes" value="keynotes"></el-option>
@@ -17,6 +18,7 @@
           <el-option label="Connect Us" value="connect_us"></el-option>
           <el-option label="HOME" value="home"></el-option>
           <el-option label="AD" value="ad"></el-option>
+          <el-option label="Footer" value="footer"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="题目" v-if="formInline.type==='news'">
@@ -60,7 +62,7 @@ export default {
   methods: {
     // 绑定@imgAdd event
     $imgAdd(pos, $file) {
-      // console.log(pos);
+      console.log($file);
       // 第一步.将图片上传到服务器.
       this.$request("post", "/util/upload", {
         content: $file.miniurl.split(",")[1],

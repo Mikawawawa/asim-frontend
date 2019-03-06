@@ -15,6 +15,10 @@
     <el-col :span="2">
       <span style="float:left">
         <el-button type="text" class="light-button" @click="()=>{this.$router.push('./upload')}">
+          <span style="padding:2px">Upload Paper</span>
+        </el-button>
+
+        <el-button type="text" class="light-button" @click="()=>{this.$router.push('./register')}">
           <span style="padding:2px">Register</span>
           <el-badge class="mark" value="click"/>
         </el-button>

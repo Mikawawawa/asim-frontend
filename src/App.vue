@@ -16,15 +16,18 @@
         </el-container>
       </el-container>
 
-      <el-footer>
-        <span>
+      <footer
+        style="display:flex;flex-direction: column;justify-content: center;align-items:center"
+      >
+        <Marked style="text-align:center;display:flex;margin:0px;padding:0px;" :input="content"/>
+        <div>
           <el-button
             @click="()=>{dialogFormVisible=true}"
             type="text"
           >ASIM2019 Copyright @ 2019-2020</el-button>
-        </span>
+        </div>
         <!-- <span>ASIM2019 Copyright @ 2019-2020</span> -->
-      </el-footer>
+      </footer>
     </el-container>
     <el-dialog :visible.sync="dialogFormVisible" small>
       <el-form :model="form">
@@ -43,16 +46,20 @@
 <script>
 import Aside from "@/components/Aside.vue";
 import Banner from "@/components/Banner.vue";
+import Marked from "@/components/Marked.vue";
+
 export default {
   components: {
     Aside,
-    Banner
+    Banner,
+    Marked
   },
   data: function() {
     return {
       form: {
         name: ""
       },
+      content: "",
       dialogFormVisible: false,
       formLabelWidth: "auto"
     };
@@ -64,6 +71,12 @@ export default {
         this.dialogFormVisible = false;
       }
     }
+  },
+  created: async function() {
+    let res = await this.$request("post", `/util/detail`, {
+      hash: "footer"
+    });
+    this.content = res.code == 1 ? res.data : "# Hello ASIM2019";
   }
 };
 </script>

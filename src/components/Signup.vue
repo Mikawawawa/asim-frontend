@@ -46,6 +46,12 @@
 </template>
 <script>
 export default {
+  props: {
+    towards: {
+      type: String,
+      default: "register"
+    }
+  },
   data() {
     return {
       labelPosition: "top",
@@ -87,7 +93,11 @@ export default {
       this.$refs[formName].validate(
         function(valid) {
           if (valid) {
-            this.$request("post", "/user/put", this.formLabelAlign).then(
+            this.$request(
+              "post",
+              "/user/put/" + this.towards,
+              this.formLabelAlign
+            ).then(
               function() {
                 this.$router.push("./");
               }.bind(this)

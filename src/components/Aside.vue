@@ -16,6 +16,11 @@
         <span slot="title">Call For Papers</span>
       </el-menu-item>
 
+      <el-menu-item index="./paper_submission">
+        <i class="el-icon-edit"></i>
+        <span slot="title">Paper Submission</span>
+      </el-menu-item>
+
       <el-menu-item index="./committee">
         <i class="el-icon-tickets"></i>
         <span slot="title">Committee</span>
@@ -43,7 +48,7 @@
 
       <el-menu-item index="./register">
         <i class="el-icon-edit-outline"></i>
-        <span slot="title">Register</span>
+        <span slot="title">Register Information</span>
       </el-menu-item>
 
       <el-menu-item index="./transportation">

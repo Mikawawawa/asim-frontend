@@ -1,6 +1,6 @@
 <template>
-  <Info title="Register">
-    <Signup/>
+  <Info :title="column">
+    <Signup :towards="column==='Register'?'register':'upload'"/>
   </Info>
 </template>
 

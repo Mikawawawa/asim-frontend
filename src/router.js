@@ -29,7 +29,14 @@ export default new Router({
     {
       path: "/upload",
       name: "upload",
-      component: Upload
+      component: Upload,
+      props: { column: "Upload Paper" }
+    },
+    {
+      path: "/register",
+      name: "register",
+      component: Upload,
+      props: { column: "Register" }
     },
     {
       path: "/news",
@@ -45,6 +52,11 @@ export default new Router({
       path: "/call_for_papers",
       component: StaticInfo,
       props: { column: "call_for_papers" }
+    },
+    {
+      path: "/paper_submission",
+      component: StaticInfo,
+      props: { column: "paper_submission" }
     },
     {
       path: "/committee",

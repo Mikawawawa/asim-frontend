@@ -1,5 +1,5 @@
 <template>
-  <div v-html="compiledMarkdown" class="v-show" style="padding:20px;text-align:left"></div>
+  <div v-html="compiledMarkdown" class="v-show" style="padding:20px;text-align:left;"></div>
 </template>
 <script>
 import marked from "marked";
@@ -59,6 +59,10 @@ export default {
 .v-show > dl {
   margin-bottom: 16px;
   padding: 0;
+  /* word-wrap: break-word; */
+  /* white-space: nowrap; */
+  /* text-wrap: unrestricted; */
+  word-break: break-all;
 }
 .v-show > h1 {
   font-size: 48px;
