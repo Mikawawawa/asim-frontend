@@ -46,13 +46,12 @@
 
 
 <script>
-// import axios from "axios";
-
+import config from "@/service/config.json";
 export default {
   data() {
     return {
       img: 0,
-      value: "## ASIM 2019",
+      value: "# AISM 2019",
       formInline: {
         user: "",
         type: ""
@@ -72,7 +71,7 @@ export default {
         trans: true
       }).then(
         function(data) {
-          this.$refs.md.$img2Url(pos, `http://asim.mcfhq.com/${data.data}`);
+          this.$refs.md.$img2Url(pos, `${config.domain}/${data.data}`);
         }.bind(this)
       );
     },

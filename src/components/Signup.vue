@@ -22,7 +22,7 @@
 
     <el-form-item label="Upload Paper" prop="PackingImage">
       <el-upload
-        action="http://asim.mcfhq.com/util/paper"
+        :action="`${domain}/util/paper`"
         :on-success="uploadSuccess"
         :on-preview="handlePreview"
         :on-remove="handleRemove"
@@ -45,6 +45,8 @@
   </el-form>
 </template>
 <script>
+import config from "@/service/config.json";
+
 export default {
   props: {
     towards: {
@@ -54,6 +56,7 @@ export default {
   },
   data() {
     return {
+      domain: config.domain,
       labelPosition: "top",
       formLabelAlign: {
         firstname: "",
