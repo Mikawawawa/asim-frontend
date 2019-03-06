@@ -61,7 +61,7 @@ export default {
   methods: {
     // 绑定@imgAdd event
     $imgAdd(pos, $file) {
-      console.log($file);
+      // console.log($file);
       // 第一步.将图片上传到服务器.
       this.$request("post", "/util/upload", {
         content: $file.miniurl.split(",")[1],
